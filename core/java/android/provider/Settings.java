@@ -5292,6 +5292,11 @@ public final class Settings {
         public static final String ADAPTIVE_PLAYBACK_TIMEOUT = "adaptive_playback_timeout";
 
         /**
+         * Whether to kill background processes when the screen is turned off.
+         */
+        public static final String BACKGROUND_PROCESS_KILLER = "background_process_killer";
+
+        /**
          * Control whether the process CPU info meter should be shown.
          * @hide
          */
