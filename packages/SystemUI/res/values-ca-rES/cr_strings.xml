@@ -26,16 +26,16 @@
     <!-- A toast message shown after successfully deleting a screen recording [CHAR LIMIT=NONE] -->
     <string name="screenrecord_delete_description">S\'ha eliminat la gravació de pantalla</string>
     <!-- Screen record -->
-    <string name="screenrecord_stopdot_label">Show stop dot</string>
-    <string name="screenrecord_stopdot_summary">Longpress to move it</string>
+    <string name="screenrecord_stopdot_label">Mostra el botó d\'aturada</string>
+    <string name="screenrecord_stopdot_summary">Mantén premut per a moure\'l</string>
     <string name="screenrecord_lowquality_label">Menys qualitat per a un fitxer de menor mida</string>
-    <string name="screenrecord_lowquality_summary">For smaller file size</string>
-    <string name="screenrecord_longer_timeout_switch_label">Bigger file size limit</string>
-    <string name="screenrecord_longer_timeout_switch_summary">Limit recording size to 15 GB</string>
-    <string name="screenrecord_skip_time_label">Skip timer</string>
-    <string name="screenrecord_skip_time_summary">Remove 3 second wait</string>
-    <string name="screenrecord_hevc_switch_label">Enable HEVC</string>
-    <string name="screenrecord_hevc_switch_summary">Use more efficient HEVC video encoding</string>
+    <string name="screenrecord_lowquality_summary">El fitxer ocuparà un menor espai</string>
+    <string name="screenrecord_longer_timeout_switch_label">Límit de la mida del fitxer més gran</string>
+    <string name="screenrecord_longer_timeout_switch_summary">Limita la mida de l\'enregistrament a 15 GB</string>
+    <string name="screenrecord_skip_time_label">Omet el temporitzador</string>
+    <string name="screenrecord_skip_time_summary">Elimina l\'espera de 3 segons</string>
+    <string name="screenrecord_hevc_switch_label">Habilita l\'HEVC</string>
+    <string name="screenrecord_hevc_switch_summary">Utilitza la codificació de vídeo HEVC, la qual és més eficient</string>
     <!-- Label for UI element which allows deleting the screenshot [CHAR LIMIT=30] -->
     <string name="screenshot_delete_label">Eliminar</string>
     <!-- Content description indicating that tapping the element will allow deleting the screenshot [CHAR LIMIT=NONE] -->
@@ -45,7 +45,7 @@
     <string name="status_bar_vpn">VPN</string>
     <string name="status_bar_data_saver">Estalvi de dades</string>
     <string name="status_bar_call_strength">Força de la trucada</string>
-    <string name="status_bar_firewall">Firewall</string>
+    <string name="status_bar_firewall">Tallafoc</string>
     <string name="status_bar_ims">VoLTE/VoWiFi</string>
     <!-- Text to use when the number in a notification info is too large -->
     <!-- Indication on the keyguard that is shown when the device is charging with a dash charger. Should match keyguard_plugged_in_dash_charging [CHAR LIMIT=40]-->
@@ -58,11 +58,11 @@
     <string name="keyguard_indication_vooc_charging_time"><xliff:g id="percentage">%2$s</xliff:g> • Càrrega VOOC (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> per a completar)</string>
     <string name="keyguard_plugged_in_vooc_charging"><xliff:g id="percentage">%s</xliff:g> • Càrrega VOOC</string>
     <!-- Indication on the keyguard that is shown when the device is charging with a turbo power charger. Should match keyguard_plugged_in_turbo_charging [CHAR LIMIT=40]-->
-    <string name="keyguard_indication_turbo_power_time"><xliff:g id="percentage">%2$s</xliff:g> • Turbo Charging (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> until full)</string>
-    <string name="keyguard_plugged_in_turbo_charging"><xliff:g id="percentage">%s</xliff:g> • Turbo Charging</string>
+    <string name="keyguard_indication_turbo_power_time"><xliff:g id="percentage">%2$s</xliff:g> • Càrrega Turbo (<xliff:g id="charging_time_left" example="4 hours and 2 minutes">%1$s</xliff:g> per a finalitzar la càrrega)</string>
+    <string name="keyguard_plugged_in_turbo_charging"><xliff:g id="percentage">%s</xliff:g> • Càrrega Turbo</string>
     <!-- Data usage info in QS footer -->
-    <string name="usage_data">used today</string>
-    <string name="usage_data_default_suffix">Data</string>
+    <string name="usage_data">utilitzat avui</string>
+    <string name="usage_data_default_suffix">Dades</string>
     <string name="usage_wifi_default_suffix">Wi-Fi</string>
     <!-- On The Go -->
     <string name="onthego_notif_ticker">On-The-Go activat</string>
@@ -118,15 +118,15 @@
     <string name="tristate_rotation_270">Horitzontal (270º)</string>
     <!-- QuickSettings: InternetDialog: Summary for how many devices are connected to the hotspot [CHAR LIMIT=NONE] -->
     <plurals name="quick_settings_internet_hotspot_summary_num_devices">
-        <item quantity="one">%d device connected</item>
-        <item quantity="other">%d devices connected</item>
+        <item quantity="one">%d dispositiu connectat</item>
+        <item quantity="other">%d dispositius connectats</item>
     </plurals>
     <!-- Kill button in notification guts -->
     <string name="force_stop_dlg_title">Forçar l\'aturada?</string>
     <string name="force_stop_dlg_text">Si es força l\'aturada d\'una app, és possible que no funcioni correctament.</string>
     <!-- Smart Pixels QS Tile -->
-    <string name="quick_settings_smart_pixels">Smart Pixels</string>
-    <string name="quick_settings_smart_pixels_on_power_save">Auto-enabled Smart Pixels</string>
+    <string name="quick_settings_smart_pixels">Píxels intel·ligents</string>
+    <string name="quick_settings_smart_pixels_on_power_save">Activa automàticament els píxels intel·ligents</string>
     <!-- Weather Tile -->
     <string name="omnijaws_service_error">Error carregant la informació de l\'oratge</string>
     <string name="omnijaws_service_unknown">No hi ha informació de l\'oratge</string>
@@ -134,13 +134,13 @@
     <!-- Face Unlock -->
     <string name="face_unlock_recognizing">Reconeixent rostre...</string>
     <!-- Refresh Rate Tile -->
-    <string name="refresh_rate_tile_label">Refresh rate</string>
-    <string name="auto_mode_label">Auto</string>
+    <string name="refresh_rate_tile_label">Freqüència de refresc</string>
+    <string name="auto_mode_label">Automàtic</string>
     <!-- Screenshot Tile -->
-    <string name="screenshot_long_press">Long press - selected region</string>
+    <string name="screenshot_long_press">Prem prolongadament la regió seleccionada</string>
     <!-- SoundSearch Tile -->
     <string name="quick_settings_sound_search">Cercar sons</string>
-    <string name="quick_settings_sound_search_no_app">Sorry, but this doesn\'t work if you don\'t have a Sound search app.</string>
+    <string name="quick_settings_sound_search_no_app">Aquesta funcionalitat no està disponible sense una aplicació de cerca d\'àudio.</string>
     <!-- Status bar network traffic monitor strings -->
     <string name="kilobitspersecond_short">kb/s</string>
     <string name="megabitspersecond_short">Mb/s</string>
@@ -150,11 +150,11 @@
     <string name="gigabytespersecond_short">GB/s</string>
     <!-- Language toggle tile -->
     <string name="quick_settings_locale_label">Idioma</string>
-    <string name="quick_settings_locale_more_locales_toast">Please, configure multiple languages</string>
+    <string name="quick_settings_locale_more_locales_toast">Configureu diversos idiomes</string>
     <!-- Google lens screenshot notification -->
-    <string name="lens">Lens</string>
+    <string name="lens">Lent</string>
     <!-- Bluetooth dialog -->
-    <string name="turn_on_bluetooth">Use Bluetooth</string>
-    <string name="bluetooth_is_off">Bluetooth is off</string>
-    <string name="tap_a_device_to_connect">Tap a device to connect</string>
+    <string name="turn_on_bluetooth">Utilitza el Bluetooth</string>
+    <string name="bluetooth_is_off">El Bluetooth està desactivat</string>
+    <string name="tap_a_device_to_connect">Toca un dispositiu per a connectar-te</string>
 </resources>
