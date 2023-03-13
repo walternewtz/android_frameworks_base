@@ -159,4 +159,6 @@
     <string name="turn_on_bluetooth">Використовувати Bluetooth</string>
     <string name="bluetooth_is_off">Bluetooth вимкнено</string>
     <string name="tap_a_device_to_connect">Виберіть пристрій для підключення</string>
+    <!-- Button to restart SystemUI, within the Restart Options dialog -->
+    <string name="global_action_restart_systemui">SystemUI</string>
 </resources>
