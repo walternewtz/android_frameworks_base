@@ -157,4 +157,6 @@
     <string name="turn_on_bluetooth">Χρήση Bluetooth</string>
     <string name="bluetooth_is_off">Το Bluetooth είναι απενεργοποιημένο</string>
     <string name="tap_a_device_to_connect">Πατήστε μια συσκευή για να συνδεθείτε</string>
+    <!-- Button to restart SystemUI, within the Restart Options dialog -->
+    <string name="global_action_restart_systemui">SystemUI</string>
 </resources>
