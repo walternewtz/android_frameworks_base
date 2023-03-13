@@ -158,4 +158,6 @@
     <string name="turn_on_bluetooth">Folosiți Bluetooth</string>
     <string name="bluetooth_is_off">Bluetooth este dezactivat</string>
     <string name="tap_a_device_to_connect">Atingeți un dispozitiv pentru conectare</string>
+    <!-- Button to restart SystemUI, within the Restart Options dialog -->
+    <string name="global_action_restart_systemui">Interfață sistem</string>
 </resources>
