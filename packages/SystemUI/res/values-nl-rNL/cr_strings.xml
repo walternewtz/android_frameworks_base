@@ -157,4 +157,6 @@
     <string name="turn_on_bluetooth">Bluetooth gebruiken</string>
     <string name="bluetooth_is_off">Bluetooth is uitgeschakeld</string>
     <string name="tap_a_device_to_connect">Tik op een apparaat om te verbinden</string>
+    <!-- Button to restart SystemUI, within the Restart Options dialog -->
+    <string name="global_action_restart_systemui">SystemUI</string>
 </resources>
