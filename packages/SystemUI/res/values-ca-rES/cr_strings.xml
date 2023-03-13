@@ -158,5 +158,5 @@
     <string name="bluetooth_is_off">El Bluetooth està desactivat</string>
     <string name="tap_a_device_to_connect">Toca un dispositiu per a connectar-te</string>
     <!-- Button to restart SystemUI, within the Restart Options dialog -->
-    <string name="global_action_restart_systemui">SystemUI</string>
+    <string name="global_action_restart_systemui">Interfície del sistema</string>
 </resources>
