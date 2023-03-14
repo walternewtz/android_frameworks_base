@@ -16,13 +16,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Title of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permlab_fakePackageSignature">Enganyar la signatura del paquet</string>
+    <string name="permlab_fakePackageSignature">Falsifica la signatura del paquet</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permdesc_fakePackageSignature">Permet que l\'aplicació s\'executi com una aplicació diferent. Les aplicacions malicioses poden utilitzar això per accedir a dades personals. Hi han usos legítims, com un emulador pretenent ser el que emula. Concediu aquest permís amb compte!</string>
+    <string name="permdesc_fakePackageSignature">Permet que l\'aplicació s\'executi com a una aplicació diferent. Les aplicacions malicioses ho poden utilitzar per accedir a dades personals. Hi ha usos legítims, com un emulador pretenent ser el que emula. Concediu aquest permís amb compte!</string>
     <!-- Title of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permgrouplab_fake_package_signature">Enganyar la signatura del paquet</string>
+    <string name="permgrouplab_fake_package_signature">Falsifica la signatura del paquet</string>
     <!-- Description of a category of application permissions, listed so the user can choose whether they want to allow the application to do this. -->
-    <string name="permgroupdesc_fake_package_signature">permetre falsificar la signatura del paquet</string>
+    <string name="permgroupdesc_fake_package_signature">permet la falsificació de la signatura del paquet</string>
     <!-- Message shown to the user when the apps requests permission from this group. If ever possible this should stay below 80 characters (assuming the parameters takes 20 characters). Don't abbreviate until the message reaches 120 characters though. [CHAR LIMIT=120] -->
     <string name="permgrouprequest_fake_package_signature">Voleu permetre que
         &lt;b&gt;<xliff:g id="app_name" example="Gmail">%1$s</xliff:g>&lt;/b&gt; falsifiqui la signatura del paquet?</string>
@@ -35,7 +35,7 @@
     <string name="pocket_view_top_tag_number1">1.\u0020</string>
     <string name="pocket_view_top_tag_number2">2.\u0020</string>
     <!-- Button that copies the url to the log of a crashed application -->
-    <string name="aerr_copy">Copiar URL del registre d\'errors</string>
+    <string name="aerr_copy">Copia l\'URL del registre d\'errors</string>
     <string name="url_copy_success">URL copiada amb èxit</string>
     <string name="url_copy_failed">Hi ha hagut un error mentre es carregava el registre a Pasty</string>
     <!-- Face unlock -->
