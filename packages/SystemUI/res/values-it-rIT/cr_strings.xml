@@ -118,7 +118,7 @@
     <string name="tristate_rotation_270">Orizzontale (270°)</string>
     <!-- QuickSettings: InternetDialog: Summary for how many devices are connected to the hotspot [CHAR LIMIT=NONE] -->
     <plurals name="quick_settings_internet_hotspot_summary_num_devices">
-        <item quantity="one">%d dispositivo connesso</item>
+        <item quantity="one">%d Dispositivo connesso</item>
         <item quantity="other">%d dispositivo connesso</item>
     </plurals>
     <!-- Kill button in notification guts -->
@@ -158,5 +158,5 @@
     <string name="bluetooth_is_off">Bluetooth disattivato</string>
     <string name="tap_a_device_to_connect">Tocca un dispositivo per connetterti</string>
     <!-- Button to restart SystemUI, within the Restart Options dialog -->
-    <string name="global_action_restart_systemui">SystemUI</string>
+    <string name="global_action_restart_systemui">Interfaccia di sistema</string>
 </resources>
