@@ -36,6 +36,7 @@ import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.os.AsyncTask;
 import android.os.Trace;
+import android.provider.Settings;
 import android.service.notification.NotificationStats;
 import android.service.notification.StatusBarNotification;
 import android.util.ArraySet;
@@ -43,7 +44,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.android.internal.util.crdroid.ImageHelper;
 import com.android.systemui.Dumpable;
+import com.android.systemui.R;
 import com.android.systemui.animation.Interpolators;
 import com.android.systemui.colorextraction.SysuiColorExtractor;
 import com.android.systemui.dagger.qualifiers.Main;
@@ -93,6 +96,8 @@ public class NotificationMediaManager implements Dumpable, TunerService.Tunable 
 
     private static final String LOCKSCREEN_MEDIA_METADATA =
             "lineagesecure:" + LineageSettings.Secure.LOCKSCREEN_MEDIA_METADATA;
+    private static final String LOCKSCREEN_ALBUMART_FILTER =
+            "system:" + Settings.System.LOCKSCREEN_ALBUMART_FILTER;
 
     private final StatusBarStateController mStatusBarStateController;
     private final SysuiColorExtractor mColorExtractor;
@@ -143,6 +148,7 @@ public class NotificationMediaManager implements Dumpable, TunerService.Tunable 
     private ImageView mBackdropBack;
 
     private boolean mShowMediaMetadata;
+    private int mAlbumArtFilter;
 
     private final MediaController.Callback mMediaListener = new MediaController.Callback() {
         @Override
@@ -212,13 +218,24 @@ public class NotificationMediaManager implements Dumpable, TunerService.Tunable 
 
         mTunerService = tunerService;
         mTunerService.addTunable(this, LOCKSCREEN_MEDIA_METADATA);
+        mTunerService.addTunable(this, LOCKSCREEN_ALBUMART_FILTER);
     }
 
     @Override
     public void onTuningChanged(String key, String newValue) {
-        if (LOCKSCREEN_MEDIA_METADATA.equals(key)) {
-            mShowMediaMetadata = TunerService.parseIntegerSwitch(newValue, false);
-            dispatchUpdateMediaMetaData(false /* changed */, true /* allowAnimation */);
+        switch (key) {
+            case LOCKSCREEN_MEDIA_METADATA:
+                mShowMediaMetadata =
+                        TunerService.parseIntegerSwitch(newValue, false);
+                dispatchUpdateMediaMetaData(false /* changed */, true /* allowAnimation */);
+                break;
+            case LOCKSCREEN_ALBUMART_FILTER:
+                mAlbumArtFilter =
+                        TunerService.parseInteger(newValue, 0);
+                dispatchUpdateMediaMetaData(false /* changed */, true /* allowAnimation */);
+                break;
+            default:
+                break;
         }
     }
 
@@ -718,7 +735,19 @@ public class NotificationMediaManager implements Dumpable, TunerService.Tunable 
     };
 
     private Bitmap processArtwork(Bitmap artwork) {
-        return mMediaArtworkProcessor.processArtwork(mContext, artwork);
+        switch (mAlbumArtFilter) {
+            case 0:
+            default:
+                return artwork;
+            case 1:
+                return Bitmap.createBitmap(ImageHelper.toGrayscale(artwork));
+            case 2:
+                return Bitmap.createBitmap(ImageHelper.getColoredBitmap(new BitmapDrawable(mBackdropBack.getResources(), artwork), mContext.getResources().getColor(R.color.accent_device_default_light)));
+            case 3:
+                return mMediaArtworkProcessor.processArtwork(mContext, artwork, 25f);
+            case 4:
+                return mMediaArtworkProcessor.processArtwork(mContext, Bitmap.createBitmap(ImageHelper.toGrayscale(artwork)), 25f);
+        }
     }
 
     @MainThread
