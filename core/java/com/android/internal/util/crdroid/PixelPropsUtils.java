@@ -188,6 +188,10 @@ public class PixelPropsUtils {
                     spoofBuildGms();
                 }
             }
+
+            if (packageName.equals("com.android.vending")) {
+                sIsFinsky = true;
+            }
             return;
         }
         if (packageName.startsWith("com.google.")
@@ -285,28 +289,30 @@ public class PixelPropsUtils {
 
     private static void setVersionField(String key, Object value) {
         try {
-            if (DEBUG) Log.d(TAG, "Defining version field " + key + " to " + value.toString());
+            if (DEBUG) Log.d(TAG, "Defining prop " + key + " to " + value.toString());
             Field field = Build.VERSION.class.getDeclaredField(key);
             field.setAccessible(true);
             field.set(null, value);
             field.setAccessible(false);
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            Log.e(TAG, "Failed to set version field " + key, e);
+            Log.e(TAG, "Failed to set prop " + key, e);
         }
     }
 
     private static void setVersionFieldString(String key, String value) {
         try {
+            if (DEBUG) Log.d(TAG, "Defining prop " + key + " to " + value.toString());
             Field field = Build.VERSION.class.getDeclaredField(key);
             field.setAccessible(true);
             field.set(null, value);
             field.setAccessible(false);
         } catch (NoSuchFieldException | IllegalAccessException e) {
-            Log.e(TAG, "Failed to spoof Build." + key, e);
+            Log.e(TAG, "Failed to set prop " + key, e);
         }
     }
 
     private static void spoofBuildGms() {
+        if (spoofBuildGms == null || spoofBuildGms.length == 0) return;
         // Alter build parameters for avoiding hardware attestation enforcement
         for (String spoof : spoofBuildGms) {
             String[] range = spoof.split(";");
@@ -317,6 +323,8 @@ public class PixelPropsUtils {
 
             if (type.equals("PropValue")) {
                 setPropValue(name, value);
+            } else if (type.equals("PropValueLong")) {
+                setPropValue(name, Long.valueOf(value));
             } else if (type.equals("VersionField")) {
                 setVersionField(name, Integer.valueOf(value));
             } else if (type.equals("VersionFieldString")) {
