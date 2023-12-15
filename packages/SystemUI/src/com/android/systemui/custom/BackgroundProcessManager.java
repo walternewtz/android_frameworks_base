@@ -45,15 +45,13 @@ public class BackgroundProcessManager {
     public static void start() {
         AlarmClockInfo alarmClockInfo =
                 ((AlarmManager) mContext.getSystemService(Context.ALARM_SERVICE)).getNextAlarmClock();
-        boolean sleepModeEnabled = Settings.Secure.getIntForUser(mContext.getContentResolver(),
-                Settings.Secure.SLEEP_MODE_ENABLED, 0, UserHandle.USER_CURRENT) == 1;
         long timeUntilAlarm = 0;
 
         if (alarmClockInfo != null) {
             timeUntilAlarm = alarmClockInfo.getTriggerTime() - System.currentTimeMillis();
         }
 
-        if (sleepModeEnabled || (timeUntilAlarm != 0 && timeUntilAlarm < 3600000)) {
+        if (timeUntilAlarm != 0 && timeUntilAlarm < 3600000) {
             mHandler.postDelayed(mStartRunnable, 100);
         } else {
             mHandler.postDelayed(mStartRunnable, 3600000);
