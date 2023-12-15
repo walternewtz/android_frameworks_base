@@ -7439,6 +7439,8 @@ message MetricsEvent {
     // crDroid Settings
     CRDROID_SETTINGS = 4000;
 
+    HAVOC_SETTINGS = 2772;
+
     // Panel for Mobile Data
     PANEL_MOBILE_DATA = 2002;
     // Panel for Bluetooth
